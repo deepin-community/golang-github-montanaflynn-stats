@@ -1,5 +1,67 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-montanaflynn-stats (0.7.1-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 0.7.1
+  * Reorder fields in debian/control and debian/copyright
+  * Use dh-sequence-golang instead of dh-golang and --with=golang
+  * Bump Standards-Version to 4.6.2 (no change)
+  * Mark library package with "Multi-Arch: foreign"
+  * Drop -dev package’s unneeded dependency on ${shlibs:Depends}
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Tue, 11 Jul 2023 01:26:01 -0600
+
+golang-github-montanaflynn-stats (0.6.4-2) unstable; urgency=medium
+
+  * debian/control: Change Section from devel to golang
+
+ -- Anthony Fok <foka@debian.org>  Thu, 14 Jan 2021 01:03:43 -0700
+
+golang-github-montanaflynn-stats (0.6.4-1) unstable; urgency=medium
+
+  * New upstream version 0.6.4
+  * Remove 0001-Fix-failing-tests-due-to-precision-errors-on-arm64.patch as
+    it is applied upstream, see https://github.com/montanaflynn/stats/pull/58
+    Thanks to Guinness and Nicolas Braud-Santoni (nicoo) for the fix!
+
+ -- Anthony Fok <foka@debian.org>  Wed, 13 Jan 2021 19:36:15 -0700
+
+golang-github-montanaflynn-stats (0.6.3-3) unstable; urgency=low
+
+  * Team upload.
+  * Fix tests on non-amd64 architectures (Closes: #976562)
+
+ -- Guinness <guinness@crans.org>  Tue, 15 Dec 2020 18:53:05 +0100
+
+golang-github-montanaflynn-stats (0.6.3-2) unstable; urgency=medium
+
+  * debian/rules: Fix FTBFS by skipping test on non-amd64 architectures until
+    test failures due to FMA (fused multiply-add) differences are resolved.
+    See https://github.com/montanaflynn/stats/issues/33 (Closes: #976562)
+  * debian/control: Bump Standards-Version to 4.5.1 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Tue, 15 Dec 2020 05:36:45 -0700
+
+golang-github-montanaflynn-stats (0.6.3-1) unstable; urgency=medium
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Anthony Fok ]
+  * New upstream version 0.6.3
+  * debian/watch: Update to version=4
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * Apply "cme fix dpkg" fixes:
+    - Organize debian/control fields
+    - Change Priority from "extra" to "optional"
+    - Update debhelper dependency to "Build-Depends: debhelper-compat (= 13)"
+    - Bump Standards-Version to 4.5.0 (no change)
+  * Add "Rules-Requires-Root: no" to debian/control
+  * Update Maintainer email address to team+pkg-go@tracker.debian.org
+  * Add debian/upstream/metadata
+
+ -- Anthony Fok <foka@debian.org>  Fri, 23 Oct 2020 01:36:30 -0600
+
+golang-github-montanaflynn-stats (0.2.0+git20170729.66.4a16327-1) unstable; urgency=medium
+
+  * Initial release (Closes: #871464)
+
+ -- Anthony Fok <foka@debian.org>  Tue, 08 Aug 2017 01:05:09 -0600
